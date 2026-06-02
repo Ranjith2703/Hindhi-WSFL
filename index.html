@@ -9,7 +9,7 @@
 <meta property="og:description" content="Master Hindi with confidence. Learn from K. Ashokkumar, Hindi Pandit & Pracharak (DBHPS).">
 <meta property="og:type" content="website">
 <title>The Hindian Spoken Hindi Academy | Master Hindi With Confidence</title>
-
+<link rel="icon" href="ohm.png" type="image/png">
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
@@ -37,11 +37,6 @@
 
 </head>
 <body>
-
-<!-- Custom cursor -->
-<div class="cursor" id="cursor"></div>
-<div class="cursor-follower" id="cursorFollower"></div>
-<div class="cursor-glow" id="cursorGlow"></div>
 
 <!-- Scroll progress -->
 <div id="scroll-progress"></div>
@@ -105,8 +100,11 @@
 <!-- ===== NAVBAR ===== -->
 <nav id="navbar">
   <a href="#home" class="nav-brand">
-    <div class="nav-brand-name">THE HINDIAN</div>
-    <div class="nav-brand-sub">Spoken Hindi Academy</div>
+    <span class="nav-logo-mark">H</span>
+    <span class="nav-brand-text">
+      <span class="nav-brand-name">THE HINDIAN</span>
+      <span class="nav-brand-sub">Spoken Hindi Academy</span>
+    </span>
   </a>
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
@@ -136,7 +134,11 @@
 
 <!-- ===== HERO ===== -->
 <section id="home">
+  <div class="hero-bg-photo"></div>
   <div class="hero-bg-grad"></div>
+  <div class="hero-ambience">
+    <span></span><span></span><span></span><span></span>
+  </div>
 
   <!-- Watermark Chakra -->
   <svg class="hero-chakra" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -194,6 +196,20 @@
         <i class="fab fa-whatsapp"></i> Free Demo Class
       </a>
     </div>
+    <div class="hero-stats" id="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num count-up" data-count="1000" data-suffix="+">0</span>
+        <span class="hero-stat-label">Students Trained</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num count-up" data-count="10" data-suffix="+">0</span>
+        <span class="hero-stat-label">Years Experience</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num count-up" data-count="100" data-suffix="%">0</span>
+        <span class="hero-stat-label">Success Rate</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -202,22 +218,22 @@
   <div class="trust-grid">
     <div class="trust-item" data-aos="fade-up" data-aos-delay="0">
       <div class="trust-icon"><i class="fas fa-user-graduate"></i></div>
-      <div class="trust-num" data-count="1000">0</div>
+      <div class="trust-num count-up" data-count="1000" data-suffix="+">0</div>
       <div class="trust-label">Students Trained</div>
     </div>
     <div class="trust-item" data-aos="fade-up" data-aos-delay="100">
       <div class="trust-icon"><i class="fas fa-star"></i></div>
-      <div class="trust-num" data-count="10">0</div>
+      <div class="trust-num count-up" data-count="10" data-suffix="+">0</div>
       <div class="trust-label">Years Experience</div>
     </div>
     <div class="trust-item" data-aos="fade-up" data-aos-delay="200">
       <div class="trust-icon"><i class="fas fa-laptop"></i></div>
-      <div class="trust-num" data-count="5">0</div>
+      <div class="trust-num count-up" data-count="5" data-suffix="+">0</div>
       <div class="trust-label">Course Programs</div>
     </div>
     <div class="trust-item" data-aos="fade-up" data-aos-delay="300">
       <div class="trust-icon"><i class="fas fa-trophy"></i></div>
-      <div class="trust-num" data-count="100">0</div>
+      <div class="trust-num count-up" data-count="100" data-suffix="%">0</div>
       <div class="trust-label">Success Rate %</div>
     </div>
   </div>
@@ -333,32 +349,32 @@
   </div>
   <div class="features-grid">
     <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
-      <span class="feature-icon">🎥</span>
+      <span class="feature-icon"><i class="fas fa-video"></i></span>
       <div class="feature-title">Video & Audio Classes</div>
       <div class="feature-desc">High-quality video and audio sessions that make learning Hindi visual, auditory, and highly engaging.</div>
     </div>
     <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-      <span class="feature-icon">👥</span>
+      <span class="feature-icon"><i class="fas fa-users"></i></span>
       <div class="feature-title">Group Conversation</div>
       <div class="feature-desc">Interactive group sessions to build conversational confidence and practice real dialogue in a supportive environment.</div>
     </div>
     <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-      <span class="feature-icon">🎯</span>
+      <span class="feature-icon"><i class="fas fa-bullseye"></i></span>
       <div class="feature-title">One-to-One Sessions</div>
       <div class="feature-desc">Personalized one-on-one conversation practice with direct feedback to accelerate your fluency rapidly.</div>
     </div>
     <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
-      <span class="feature-icon">🏠</span>
+      <span class="feature-icon"><i class="fas fa-house-user"></i></span>
       <div class="feature-title">Flexible Learning Modes</div>
       <div class="feature-desc">Choose from online classes, offline classroom sessions, or convenient home tuition — wherever you learn best.</div>
     </div>
     <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-      <span class="feature-icon">📚</span>
+      <span class="feature-icon"><i class="fas fa-book-open"></i></span>
       <div class="feature-title">Practical Exercises</div>
       <div class="feature-desc">Structured exercises that reinforce grammar, vocabulary, and pronunciation through daily practice activities.</div>
     </div>
     <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-      <span class="feature-icon">✨</span>
+      <span class="feature-icon"><i class="fas fa-wand-magic-sparkles"></i></span>
       <div class="feature-title">Personalized Guidance</div>
       <div class="feature-desc">Customized learning plans tailored to each student's pace, goals, and background for maximum progress.</div>
     </div>
@@ -745,19 +761,19 @@
   </div>
   <div class="contact-grid container" data-aos="fade-up">
     <div class="contact-card">
-      <span class="contact-card-icon">📞</span>
+      <span class="contact-card-icon"><i class="fas fa-phone"></i></span>
       <div class="contact-card-title">Call Us</div>
       <div class="contact-card-val">+91 96596 02204<br>Available 9AM – 8PM</div>
       <a href="tel:+919659602204" class="contact-btn call">Call Now</a>
     </div>
     <div class="contact-card">
-      <span class="contact-card-icon">💬</span>
+      <span class="contact-card-icon"><i class="fab fa-whatsapp"></i></span>
       <div class="contact-card-title">WhatsApp</div>
       <div class="contact-card-val">Quick replies on WhatsApp<br>for all enquiries</div>
       <a href="https://wa.me/919659602204?text=Hello%2C%20I%20am%20interested%20in%20joining%20The%20Hindian%20Spoken%20Hindi%20Academy." target="_blank" class="contact-btn wa">WhatsApp Now</a>
     </div>
     <div class="contact-card">
-      <span class="contact-card-icon">✉️</span>
+      <span class="contact-card-icon"><i class="fas fa-envelope"></i></span>
       <div class="contact-card-title">Email</div>
       <div class="contact-card-val">hindiantamil@gmail.com<br>Reply within 24 hours</div>
       <a href="mailto:hindiantamil@gmail.com" class="contact-btn email">Send Email</a>
@@ -777,8 +793,13 @@
 <footer>
   <div class="footer-grid">
     <div>
-      <div class="footer-brand-name">THE HINDIAN</div>
-      <div class="footer-brand-sub">Spoken Hindi Academy</div>
+      <div class="footer-brand-lockup">
+        <span class="footer-logo-mark">H</span>
+        <span class="footer-brand-text">
+          <span class="footer-brand-name">THE HINDIAN</span>
+          <span class="footer-brand-sub">Spoken Hindi Academy</span>
+        </span>
+      </div>
       <p class="footer-tagline">Bridging Tamil and Hindi through expert teaching. Empowering students to speak, write, and excel in Hindi with confidence.</p>
       <div class="footer-socials">
         <a href="https://wa.me/919659602204" class="footer-social" target="_blank"><i class="fab fa-whatsapp"></i></a>

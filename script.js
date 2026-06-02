@@ -11,6 +11,8 @@
   const numEl = document.getElementById('progress-num');
   const logo = document.getElementById('preloader-logo');
   const sub = document.getElementById('preloader-sub');
+  const preloadDuration = 2000;
+  const preloadStart = performance.now();
 
   // Fade in logo
   setTimeout(() => {
@@ -36,50 +38,29 @@
   setTimeout(showQuote, 700);
 
   // Progress
-  let prog = 0;
+  let preloaderDone = false;
   const interval = setInterval(() => {
-    prog = Math.min(100, prog + Math.random() * 6 + 2);
+    const elapsed = performance.now() - preloadStart;
+    const prog = Math.min(100, (elapsed / preloadDuration) * 100);
     fillEl.style.width = prog + '%';
     numEl.textContent = Math.round(prog) + '%';
-    if (prog >= 100) {
+    if (prog >= 100 && !preloaderDone) {
+      preloaderDone = true;
       clearInterval(interval);
-      setTimeout(exitPreloader, 600);
+      exitPreloader();
     }
-  }, 60);
+  }, 30);
 
   function exitPreloader() {
     const pl = document.getElementById('preloader');
-    pl.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+    fillEl.style.width = '100%';
+    numEl.textContent = '100%';
+    pl.style.transition = 'opacity 0.45s ease, transform 0.45s ease';
     pl.style.opacity = '0';
     pl.style.transform = 'scale(1.05)';
-    setTimeout(() => { pl.style.display = 'none'; }, 800);
+    setTimeout(() => { pl.style.display = 'none'; }, 450);
   }
 })();
-
-// ===== CURSOR =====
-const cursor = document.getElementById('cursor');
-const follower = document.getElementById('cursorFollower');
-const glow = document.getElementById('cursorGlow');
-let mx = 0, my = 0, fx = 0, fy = 0, gx = 0, gy = 0;
-document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-function animateCursor() {
-  cursor.style.left = mx - 6 + 'px';
-  cursor.style.top = my - 6 + 'px';
-  fx += (mx - fx - 20) * 0.18;
-  fy += (my - fy - 20) * 0.18;
-  follower.style.left = fx + 'px';
-  follower.style.top = fy + 'px';
-  gx += (mx - gx - 40) * 0.08;
-  gy += (my - gy - 40) * 0.08;
-  glow.style.left = gx + 'px';
-  glow.style.top = gy + 'px';
-  requestAnimationFrame(animateCursor);
-}
-animateCursor();
-document.querySelectorAll('a, button, .course-card, .feature-card').forEach(el => {
-  el.addEventListener('mouseenter', () => { cursor.style.transform = 'scale(2)'; follower.style.transform = 'scale(1.5)'; });
-  el.addEventListener('mouseleave', () => { cursor.style.transform = 'scale(1)'; follower.style.transform = 'scale(1)'; });
-});
 
 // ===== SCROLL PROGRESS =====
 window.addEventListener('scroll', () => {
@@ -127,37 +108,43 @@ AOS.init({ duration: 800, once: true, easing: 'ease-out-quad', offset: 60 });
 
 // ===== COUNTER ANIMATION =====
 function animateCounter(el) {
-  const target = parseInt(el.dataset.count);
-  const suffix = target === 100 ? '%' : '+';
-  let current = 0;
-  const step = target / 50;
-  const t = setInterval(() => {
-    current = Math.min(current + step, target);
-    el.textContent = Math.round(current) + (current >= target ? suffix : '');
-    if (current >= target) clearInterval(t);
-  }, 35);
+  if (el.dataset.animated === 'true') return;
+  el.dataset.animated = 'true';
+  const target = parseInt(el.dataset.count, 10);
+  const suffix = el.dataset.suffix || '';
+  const duration = 1500;
+  const start = performance.now();
+  function tick(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const value = Math.round(target * eased);
+    el.textContent = value + (progress === 1 ? suffix : '');
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
 }
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      document.querySelectorAll('.trust-num').forEach(el => animateCounter(el));
-      observer.disconnect();
-    }
-  });
-}, { threshold: 0.5 });
-const trustSection = document.getElementById('trust');
-if (trustSection) observer.observe(trustSection);
+function initCounters() {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.count-up').forEach(el => animateCounter(el));
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('#home, #trust').forEach(section => observer.observe(section));
+}
+window.addEventListener('load', () => setTimeout(initCounters, 2100));
 
 // ===== HERO GSAP =====
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 window.addEventListener('load', () => {
-  const tl = gsap.timeline({ delay: 3.5 });
+  gsap.set(['#hero-badge','#hero-title','#hero-sub','#hero-btns','#hero-stats'], { y: 30 });
+  const tl = gsap.timeline({ delay: 2.1 });
   tl.to('#hero-badge', { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }, 0)
     .to('#hero-title', { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out' }, 0.2)
     .to('#hero-sub', { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, 0.5)
-    .to('#hero-btns', { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }, 0.8);
-
-  gsap.set(['#hero-badge','#hero-title','#hero-sub','#hero-btns'], { y: 30 });
+    .to('#hero-btns', { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }, 0.8)
+    .to('#hero-stats', { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }, 1);
 });
 
 // ===== MOBILE MENU =====
