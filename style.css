@@ -1898,3 +1898,32 @@ footer {
   animation: shimmer 3s infinite;
 }
 @keyframes shimmer { 0%{background-position: -200% 0} 100%{background-position: 200% 0} }
+
+/* ===== VISITOR COUNTER ===== */
+.visitor-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gold);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  margin: 10px 0;
+}
+.visitor-counter i {
+  color: var(--gold);
+  font-size: 14px;
+}
+.visitor-counter:hover {
+  background: rgba(251, 191, 36, 0.1);
+  border-color: rgba(251, 191, 36, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(251, 191, 36, 0.15);
+}

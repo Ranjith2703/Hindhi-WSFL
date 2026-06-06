@@ -1,860 +1,971 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="The Hindian Spoken Hindi Academy - Learn Hindi through Tamil with K. Ashokkumar, Hindi Pandit & Pracharak. Online, Offline & Home Tuition classes.">
-<meta name="title" content="The Hindian Spoken Hindi Academy | Learn Hindi Through Tamil">
-<meta property="og:title" content="The Hindian Spoken Hindi Academy">
-<meta property="og:description" content="Master Hindi with confidence. Learn from K. Ashokkumar, Hindi Pandit & Pracharak (DBHPS).">
-<meta property="og:type" content="website">
-<title>The Hindian Spoken Hindi Academy | Master Hindi With Confidence</title>
-<link rel="icon" href="ohm.png" type="image/png">
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="The Hindian Spoken Hindi Academy - Learn Hindi through Tamil with K. Ashokkumar, Hindi Pandit & Pracharak. Online, Offline & Home Tuition classes.">
+  <meta name="title" content="The Hindian Spoken Hindi Academy | Learn Hindi Through Tamil">
+  <meta property="og:title" content="The Hindian Spoken Hindi Academy">
+  <meta property="og:description"
+    content="Master Hindi with confidence. Learn from K. Ashokkumar, Hindi Pandit & Pracharak (DBHPS).">
+  <meta property="og:type" content="website">
+  <title>The Hindian Spoken Hindi Academy | Master Hindi With Confidence</title>
+  <link rel="icon" href="ohm.png" type="image/png">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap"
+    rel="stylesheet">
 
-<!-- GSAP -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
 
-<!-- AOS -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-<!-- Swiper -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<!-- Vanilla Tilt -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <!-- Vanilla Tilt -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
 
-<!-- Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
 
-<!-- Scroll progress -->
-<div id="scroll-progress"></div>
+  <!-- Scroll progress -->
+  <div id="scroll-progress"></div>
 
-<!-- Particles canvas -->
-<canvas id="particles-canvas"></canvas>
+  <!-- Particles canvas -->
+  <canvas id="particles-canvas"></canvas>
 
-<!-- ===== PRELOADER ===== -->
-<div id="preloader">
-  <div class="preloader-bg"></div>
-  <canvas class="preloader-particles" id="preloader-particles" width="300" height="300"></canvas>
+  <!-- ===== PRELOADER ===== -->
+  <div id="preloader">
+    <div class="preloader-bg"></div>
+    <canvas class="preloader-particles" id="preloader-particles" width="300" height="300"></canvas>
 
-  <!-- Ashoka Chakra SVG -->
-  <svg class="chakra-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="50" cy="50" r="44" stroke="#FBBF24" stroke-width="1.5" stroke-dasharray="4 3"/>
-    <circle cx="50" cy="50" r="6" fill="#FBBF24"/>
-    <circle cx="50" cy="50" r="3" fill="#1E3A8A"/>
-    <!-- 24 spokes -->
-    <g id="spokes" stroke="#FBBF24" stroke-width="1">
-      <line x1="50" y1="44" x2="50" y2="8"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(15 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(30 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(45 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(60 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(75 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(90 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(105 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(120 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(135 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(150 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(165 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(180 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(195 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(210 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(225 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(240 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(255 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(270 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(285 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(300 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(315 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(330 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(345 50 50)"/>
-    </g>
-    <circle cx="50" cy="50" r="32" stroke="#1E3A8A" stroke-width="1"/>
-    <circle cx="50" cy="50" r="20" stroke="rgba(251,191,36,0.3)" stroke-width="0.5"/>
-  </svg>
+    <!-- Ashoka Chakra SVG -->
+    <svg class="chakra-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="44" stroke="#FBBF24" stroke-width="1.5" stroke-dasharray="4 3" />
+      <circle cx="50" cy="50" r="6" fill="#FBBF24" />
+      <circle cx="50" cy="50" r="3" fill="#1E3A8A" />
+      <!-- 24 spokes -->
+      <g id="spokes" stroke="#FBBF24" stroke-width="1">
+        <line x1="50" y1="44" x2="50" y2="8" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(15 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(30 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(45 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(60 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(75 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(90 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(105 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(120 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(135 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(150 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(165 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(180 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(195 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(210 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(225 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(240 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(255 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(270 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(285 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(300 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(315 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(330 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(345 50 50)" />
+      </g>
+      <circle cx="50" cy="50" r="32" stroke="#1E3A8A" stroke-width="1" />
+      <circle cx="50" cy="50" r="20" stroke="rgba(251,191,36,0.3)" stroke-width="0.5" />
+    </svg>
 
-  <div class="preloader-logo" id="preloader-logo">THE HINDIAN SPOKEN HINDI ACADEMY</div>
-  <div class="preloader-sub" id="preloader-sub">K. Ashokkumar · Hindi Pandit & Pracharak</div>
-  <div class="preloader-quote" id="preloader-quote"></div>
+    <div class="preloader-logo" id="preloader-logo">THE HINDIAN SPOKEN HINDI ACADEMY</div>
+    <div class="preloader-sub" id="preloader-sub">K. Ashokkumar · Hindi Pandit & Pracharak</div>
+    <div class="preloader-quote" id="preloader-quote"></div>
 
-  <div class="progress-wrap">
-    <span class="progress-num" id="progress-num">0%</span>
-    <div class="progress-bar">
-      <div class="progress-fill" id="progress-fill"></div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== NAVBAR ===== -->
-<nav id="navbar">
-  <a href="#home" class="nav-brand">
-    <span class="nav-logo-mark">H</span>
-    <span class="nav-brand-text">
-      <span class="nav-brand-name">THE HINDIAN</span>
-      <span class="nav-brand-sub">Spoken Hindi Academy</span>
-    </span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#courses">Courses</a></li>
-    <li><a href="#features">Features</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#testimonials">Testimonials</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#contact" class="nav-cta">Contact</a></li>
-  </ul>
-  <div class="hamburger" id="hamburger">
-    <span></span><span></span><span></span>
-  </div>
-</nav>
-
-<!-- Mobile Menu -->
-<div class="mobile-menu" id="mobileMenu">
-  <div class="mobile-close" id="mobileClose">✕</div>
-  <a href="#home" class="mobile-link">Home</a>
-  <a href="#courses" class="mobile-link">Courses</a>
-  <a href="#features" class="mobile-link">Features</a>
-  <a href="#about" class="mobile-link">About</a>
-  <a href="#testimonials" class="mobile-link">Testimonials</a>
-  <a href="#gallery" class="mobile-link">Gallery</a>
-  <a href="#contact" class="mobile-link">Contact</a>
-</div>
-
-<!-- ===== HERO ===== -->
-<section id="home">
-  <div class="hero-bg-photo"></div>
-  <div class="hero-bg-grad"></div>
-  <div class="hero-ambience">
-    <span></span><span></span><span></span><span></span>
-  </div>
-
-  <!-- Watermark Chakra -->
-  <svg class="hero-chakra" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="50" cy="50" r="44" stroke="white" stroke-width="1" stroke-dasharray="4 3"/>
-    <circle cx="50" cy="50" r="6" fill="white"/>
-    <g stroke="white" stroke-width="0.8">
-      <line x1="50" y1="44" x2="50" y2="8"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(15 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(30 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(45 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(60 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(75 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(90 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(105 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(120 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(135 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(150 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(165 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(180 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(195 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(210 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(225 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(240 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(255 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(270 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(285 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(300 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(315 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(330 50 50)"/>
-      <line x1="50" y1="44" x2="50" y2="8" transform="rotate(345 50 50)"/>
-    </g>
-  </svg>
-
-  <div class="hero-float-1"></div>
-  <div class="hero-float-2"></div>
-  <div class="hero-float-3"></div>
-
-  <div class="hero-content">
-    <div class="hero-badge" id="hero-badge">
-      <span class="dot"></span>
-      Spoken Hindi Through Tamil
-    </div>
-    <h1 class="hero-title" id="hero-title">
-      Master <span class="gold">Hindi</span><br>
-      With <span class="saffron">Confidence</span>
-    </h1>
-    <p class="hero-sub" id="hero-sub">
-      Learn Spoken Hindi Through Tamil from K. Ashokkumar — an experienced Hindi Pandit & Pracharak (DBHPS). Online, offline, and home tuition available.
-    </p>
-    <div class="hero-btns" id="hero-btns">
-      <a href="tel:+919659602204" class="btn-primary">
-        <i class="fas fa-graduation-cap"></i> Join Now
-      </a>
-      <a href="https://wa.me/919659602204?text=Hello%2C%20I%20am%20interested%20in%20a%20free%20demo%20class." class="btn-secondary" target="_blank">
-        <i class="fab fa-whatsapp"></i> Free Demo Class
-      </a>
-    </div>
-    <div class="hero-stats" id="hero-stats">
-      <div class="hero-stat">
-        <span class="hero-stat-num count-up" data-count="1000" data-suffix="+">0</span>
-        <span class="hero-stat-label">Students Trained</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hero-stat-num count-up" data-count="10" data-suffix="+">0</span>
-        <span class="hero-stat-label">Years Experience</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hero-stat-num count-up" data-count="100" data-suffix="%">0</span>
-        <span class="hero-stat-label">Success Rate</span>
+    <div class="progress-wrap">
+      <span class="progress-num" id="progress-num">0%</span>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
       </div>
     </div>
   </div>
-</section>
 
-<!-- ===== TRUST STATS ===== -->
-<section id="trust">
-  <div class="trust-grid">
-    <div class="trust-item" data-aos="fade-up" data-aos-delay="0">
-      <div class="trust-icon"><i class="fas fa-user-graduate"></i></div>
-      <div class="trust-num count-up" data-count="1000" data-suffix="+">0</div>
-      <div class="trust-label">Students Trained</div>
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar">
+    <a href="#home" class="nav-brand">
+      <span class="nav-logo-mark"><img src="ac.png" alt=""></span>
+      <span class="nav-brand-text">
+        <span class="nav-brand-name">THE HINDIAN</span>
+        <span class="nav-brand-sub">Spoken Hindi Academy</span>
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
     </div>
-    <div class="trust-item" data-aos="fade-up" data-aos-delay="100">
-      <div class="trust-icon"><i class="fas fa-star"></i></div>
-      <div class="trust-num count-up" data-count="10" data-suffix="+">0</div>
-      <div class="trust-label">Years Experience</div>
-    </div>
-    <div class="trust-item" data-aos="fade-up" data-aos-delay="200">
-      <div class="trust-icon"><i class="fas fa-laptop"></i></div>
-      <div class="trust-num count-up" data-count="5" data-suffix="+">0</div>
-      <div class="trust-label">Course Programs</div>
-    </div>
-    <div class="trust-item" data-aos="fade-up" data-aos-delay="300">
-      <div class="trust-icon"><i class="fas fa-trophy"></i></div>
-      <div class="trust-num count-up" data-count="100" data-suffix="%">0</div>
-      <div class="trust-label">Success Rate %</div>
-    </div>
-  </div>
-</section>
+  </nav>
 
-<!-- ===== COURSES ===== -->
-<section id="courses">
-  <div class="section-header" data-aos="fade-up">
-    <div class="section-tag">What We Offer</div>
-    <h2 class="section-title">Our <span>Courses</span></h2>
-    <p class="section-desc">Comprehensive Hindi learning programs designed for Tamil speakers — from beginners to advanced.</p>
-    <div class="divider"></div>
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-close" id="mobileClose">✕</div>
+    <a href="#home" class="mobile-link">Home</a>
+    <a href="#courses" class="mobile-link">Courses</a>
+    <a href="#features" class="mobile-link">Features</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#testimonials" class="mobile-link">Testimonials</a>
+    <a href="#gallery" class="mobile-link">Gallery</a>
+    <a href="#contact" class="mobile-link">Contact</a>
   </div>
-  <div class="courses-grid">
-    <div class="course-card" data-tilt data-tilt-max="8" data-aos="fade-up" data-aos-delay="0">
-      <div class="course-card-glow"></div>
-      <div class="course-icon"><i class="fas fa-comments"></i></div>
-      <div class="course-title">Spoken Hindi Through Tamil</div>
-      <div class="course-desc">Master conversational Hindi using your mother tongue Tamil as the foundation. Perfect for beginners and daily communication.</div>
-      <span class="course-badge">Most Popular</span>
-    </div>
-    <div class="course-card" data-tilt data-tilt-max="8" data-aos="fade-up" data-aos-delay="100">
-      <div class="course-card-glow"></div>
-      <div class="course-icon"><i class="fas fa-language"></i></div>
-      <div class="course-title">Spoken Tamil Through Hindi</div>
-      <div class="course-desc">For Hindi speakers who wish to learn Tamil fluently, bridging linguistic and cultural connections naturally.</div>
-      <span class="course-badge">Bilingual</span>
-    </div>
-    <div class="course-card" data-tilt data-tilt-max="8" data-aos="fade-up" data-aos-delay="200">
-      <div class="course-card-glow"></div>
-      <div class="course-icon"><i class="fas fa-briefcase"></i></div>
-      <div class="course-title">Business Hindi</div>
-      <div class="course-desc">Professional Hindi for corporate environments, meetings, presentations, and official business communication.</div>
-      <span class="course-badge">Professional</span>
-    </div>
-    <div class="course-card" data-tilt data-tilt-max="8" data-aos="fade-up" data-aos-delay="0">
-      <div class="course-card-glow"></div>
-      <div class="course-icon"><i class="fas fa-stamp"></i></div>
-      <div class="course-title">Official Hindi</div>
-      <div class="course-desc">Learn Hindi for government offices, official correspondence, and administrative communication with precision.</div>
-      <span class="course-badge">Government</span>
-    </div>
-    <div class="course-card" data-tilt data-tilt-max="8" data-aos="fade-up" data-aos-delay="100">
-      <div class="course-card-glow"></div>
-      <div class="course-icon"><i class="fas fa-pen-nib"></i></div>
-      <div class="course-title">Written Hindi</div>
-      <div class="course-desc">Master the Devanagari script, grammar, and written expression from basic alphabets to advanced composition.</div>
-      <span class="course-badge">Foundation</span>
-    </div>
-    <div class="course-card" data-aos="fade-up" data-aos-delay="200" style="background: linear-gradient(135deg, rgba(30,58,138,0.2), rgba(37,99,235,0.1)); border-color: rgba(30,58,138,0.3); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:16px; min-height:200px;">
-      <div style="font-size:36px; color:rgba(251,191,36,0.4)"><i class="fas fa-phone"></i></div>
-      <div style="font-family:var(--font-display);font-size:20px;font-weight:700;color:var(--white);">Custom Programs</div>
-      <div style="font-size:13px;color:rgba(255,255,255,0.5)">Tailored learning paths for your specific goals. Contact us for a personalized consultation.</div>
-      <a href="tel:+919659602204" class="btn-primary" style="font-size:12px;padding:10px 20px;">Enquire Now</a>
-    </div>
-  </div>
-</section>
 
-<!-- ===== SYLLABUS ===== -->
-<section id="syllabus" style="padding:100px 40px;">
-  <div class="section-header" data-aos="fade-up">
-    <div class="section-tag">Curriculum</div>
-    <h2 class="section-title">Our <span>Syllabus</span></h2>
-    <p class="section-desc">A structured learning journey covering all essential Hindi examinations and practical skills.</p>
-    <div class="divider"></div>
-  </div>
-  <div class="timeline">
-    <div class="timeline-item" data-aos="fade-right" data-aos-delay="0">
-      <div class="timeline-dot"><i class="fas fa-microphone"></i></div>
-      <div class="timeline-content">
-        <div class="timeline-title">Spoken Hindi</div>
-        <div class="timeline-desc">Conversational Hindi with practical day-to-day vocabulary, pronunciation, and sentence construction for real-life scenarios.</div>
-      </div>
+  <!-- ===== HERO ===== -->
+  <section id="home">
+    <div class="hero-bg-photo"></div>
+    <div class="hero-bg-grad"></div>
+    <div class="hero-ambience">
+      <span></span><span></span><span></span><span></span>
     </div>
-    <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
-      <div class="timeline-dot"><i class="fas fa-book-open"></i></div>
-      <div class="timeline-content">
-        <div class="timeline-title">NCERT Hindi Curriculum</div>
-        <div class="timeline-desc">Complete NCERT Hindi syllabus coverage for students needing academic excellence aligned with national standards.</div>
-      </div>
-    </div>
-    <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
-      <div class="timeline-dot"><i class="fas fa-school"></i></div>
-      <div class="timeline-content">
-        <div class="timeline-title">CBSE Hindi</div>
-        <div class="timeline-desc">CBSE board examination preparation with focus on scoring patterns, grammar, writing skills, and comprehension.</div>
-      </div>
-    </div>
-    <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
-      <div class="timeline-dot"><i class="fas fa-certificate"></i></div>
-      <div class="timeline-content">
-        <div class="timeline-title">Matriculation Hindi</div>
-        <div class="timeline-desc">State board matriculation Hindi preparation ensuring strong foundational knowledge for academic progression.</div>
-      </div>
-    </div>
-    <div class="timeline-item" data-aos="fade-right" data-aos-delay="400">
-      <div class="timeline-dot"><i class="fas fa-award"></i></div>
-      <div class="timeline-content">
-        <div class="timeline-title">Sabha Examinations</div>
-        <div class="timeline-desc">Specialized preparation for Hindi Sabha examinations including Praveen, Visharad, and advanced proficiency certifications.</div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ===== FEATURES ===== -->
-<section id="features">
-  <div class="section-header" data-aos="fade-up">
-    <div class="section-tag">How We Teach</div>
-    <h2 class="section-title">Premium <span>Features</span></h2>
-    <p class="section-desc">Modern teaching methods combined with personalized attention for the best learning outcomes.</p>
-    <div class="divider"></div>
-  </div>
-  <div class="features-grid">
-    <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
-      <span class="feature-icon"><i class="fas fa-video"></i></span>
-      <div class="feature-title">Video & Audio Classes</div>
-      <div class="feature-desc">High-quality video and audio sessions that make learning Hindi visual, auditory, and highly engaging.</div>
-    </div>
-    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-      <span class="feature-icon"><i class="fas fa-users"></i></span>
-      <div class="feature-title">Group Conversation</div>
-      <div class="feature-desc">Interactive group sessions to build conversational confidence and practice real dialogue in a supportive environment.</div>
-    </div>
-    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-      <span class="feature-icon"><i class="fas fa-bullseye"></i></span>
-      <div class="feature-title">One-to-One Sessions</div>
-      <div class="feature-desc">Personalized one-on-one conversation practice with direct feedback to accelerate your fluency rapidly.</div>
-    </div>
-    <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
-      <span class="feature-icon"><i class="fas fa-house-user"></i></span>
-      <div class="feature-title">Flexible Learning Modes</div>
-      <div class="feature-desc">Choose from online classes, offline classroom sessions, or convenient home tuition — wherever you learn best.</div>
-    </div>
-    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-      <span class="feature-icon"><i class="fas fa-book-open"></i></span>
-      <div class="feature-title">Practical Exercises</div>
-      <div class="feature-desc">Structured exercises that reinforce grammar, vocabulary, and pronunciation through daily practice activities.</div>
-    </div>
-    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-      <span class="feature-icon"><i class="fas fa-wand-magic-sparkles"></i></span>
-      <div class="feature-title">Personalized Guidance</div>
-      <div class="feature-desc">Customized learning plans tailored to each student's pace, goals, and background for maximum progress.</div>
-    </div>
-  </div>
-</section>
+    <!-- Watermark Chakra -->
+    <svg class="hero-chakra" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="44" stroke="white" stroke-width="1" stroke-dasharray="4 3" />
+      <circle cx="50" cy="50" r="6" fill="white" />
+      <g stroke="white" stroke-width="0.8">
+        <line x1="50" y1="44" x2="50" y2="8" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(15 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(30 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(45 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(60 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(75 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(90 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(105 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(120 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(135 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(150 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(165 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(180 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(195 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(210 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(225 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(240 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(255 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(270 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(285 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(300 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(315 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(330 50 50)" />
+        <line x1="50" y1="44" x2="50" y2="8" transform="rotate(345 50 50)" />
+      </g>
+    </svg>
 
-<!-- ===== ABOUT ===== -->
-<section id="about">
-  <div class="about-wrap container">
-    <div class="about-img-wrap" data-aos="fade-right">
-      <div class="about-img-frame">
-        <div class="about-img-pattern"></div>
-        <div class="about-img-icon"><i class="fas fa-user-tie"></i></div>
+    <div class="hero-float-1"></div>
+    <div class="hero-float-2"></div>
+    <div class="hero-float-3"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge" id="hero-badge">
+        <span class="dot"></span>
+        Spoken Hindi Through Tamil
       </div>
-      <div class="about-img-badge">
-        <span class="num">10+</span>
-        <span class="lbl">Years Teaching</span>
-      </div>
-    </div>
-    <div class="about-content" data-aos="fade-left">
-      <div class="section-tag">Your Trainer</div>
-      <h2 class="about-name">K. Ashokkumar</h2>
-      <div class="about-role">Hindi Pandit & Pracharak (DBHPS)</div>
-      <p class="about-text">
-        With over a decade of dedicated teaching experience, K. Ashokkumar has transformed the way Tamil-speaking students learn and master Hindi. As a certified Hindi Pandit and Pracharak from DBHPS, he brings academic rigor combined with a deeply empathetic teaching philosophy that meets every student where they are.
-        <br><br>
-        His unique approach of teaching Hindi through Tamil removes the intimidation barrier and creates a natural bridge between two rich languages, enabling students to achieve fluency far faster than conventional methods.
+      <h1 class="hero-title" id="hero-title">
+        Master <span class="gold">Hindi</span><br>
+        With <span class="saffron">Confidence</span>
+      </h1>
+      <p class="hero-sub" id="hero-sub">
+        Learn Spoken Hindi Through Tamil from K. Ashokkumar — an experienced Hindi Pandit & Pracharak (DBHPS). Online,
+        offline, and home tuition available.
       </p>
-      <div class="about-achievements">
-        <div class="achievement-item">
-          <div class="ach-icon"><i class="fas fa-certificate"></i></div>
-          <div class="ach-text">DBHPS Certified Hindi Pandit & Pracharak</div>
+      <div class="hero-btns" id="hero-btns">
+        <a href="tel:+919659602204" class="btn-primary">
+          <i class="fas fa-graduation-cap"></i> Join Now
+        </a>
+        <a href="https://wa.me/919659602204?text=Hello%2C%20I%20am%20interested%20in%20a%20free%20demo%20class."
+          class="btn-secondary" target="_blank">
+          <i class="fab fa-whatsapp"></i> Free Demo Class
+        </a>
+      </div>
+      <div class="hero-stats" id="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-num count-up" data-count="1000" data-suffix="+">0</span>
+          <span class="hero-stat-label">Students Trained</span>
         </div>
-        <div class="achievement-item">
-          <div class="ach-icon"><i class="fas fa-users"></i></div>
-          <div class="ach-text">1000+ Students Successfully Trained</div>
+        <div class="hero-stat">
+          <span class="hero-stat-num count-up" data-count="10" data-suffix="+">0</span>
+          <span class="hero-stat-label">Years Experience</span>
         </div>
-        <div class="achievement-item">
-          <div class="ach-icon"><i class="fas fa-globe"></i></div>
-          <div class="ach-text">Online & Offline Teaching Expertise</div>
-        </div>
-        <div class="achievement-item">
-          <div class="ach-icon"><i class="fas fa-book"></i></div>
-          <div class="ach-text">NCERT, CBSE & Sabha Exam Specialist</div>
+        <div class="hero-stat">
+          <span class="hero-stat-num count-up" data-count="100" data-suffix="%">0</span>
+          <span class="hero-stat-label">Success Rate</span>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== JOURNEY ===== -->
-<section id="journey" style="padding:100px 40px;">
-  <div class="section-header" data-aos="fade-up">
-    <div class="section-tag">Your Path</div>
-    <h2 class="section-title">Success <span>Journey</span></h2>
-    <p class="section-desc">A proven 5-step roadmap from complete beginner to confident Hindi speaker.</p>
-    <div class="divider"></div>
-  </div>
-  <div class="journey-steps">
-    <div class="journey-step" data-aos="zoom-in" data-aos-delay="0">
-      <div class="journey-num">1</div>
-      <div class="journey-label">Learn the Basics</div>
+  <!-- ===== TRUST STATS ===== -->
+  <section id="trust">
+    <div class="trust-grid">
+      <div class="trust-item" data-aos="fade-up" data-aos-delay="0">
+        <div class="trust-icon"><i class="fas fa-user-graduate"></i></div>
+        <div class="trust-num count-up" data-count="1000" data-suffix="+">0</div>
+        <div class="trust-label">Students Trained</div>
+      </div>
+      <div class="trust-item" data-aos="fade-up" data-aos-delay="100">
+        <div class="trust-icon"><i class="fas fa-star"></i></div>
+        <div class="trust-num count-up" data-count="10" data-suffix="+">0</div>
+        <div class="trust-label">Years Experience</div>
+      </div>
+      <div class="trust-item" data-aos="fade-up" data-aos-delay="200">
+        <div class="trust-icon"><i class="fas fa-laptop"></i></div>
+        <div class="trust-num count-up" data-count="5" data-suffix="+">0</div>
+        <div class="trust-label">Course Programs</div>
+      </div>
+      <div class="trust-item" data-aos="fade-up" data-aos-delay="300">
+        <div class="trust-icon"><i class="fas fa-trophy"></i></div>
+        <div class="trust-num count-up" data-count="100" data-suffix="%">0</div>
+        <div class="trust-label">Success Rate %</div>
+      </div>
     </div>
-    <div class="journey-step" data-aos="zoom-in" data-aos-delay="100">
-      <div class="journey-num">2</div>
-      <div class="journey-label">Build Vocabulary</div>
-    </div>
-    <div class="journey-step" data-aos="zoom-in" data-aos-delay="200">
-      <div class="journey-num">3</div>
-      <div class="journey-label">Practice Conversations</div>
-    </div>
-    <div class="journey-step" data-aos="zoom-in" data-aos-delay="300">
-      <div class="journey-num">4</div>
-      <div class="journey-label">Improve Fluency</div>
-    </div>
-    <div class="journey-step" data-aos="zoom-in" data-aos-delay="400">
-      <div class="journey-num">5</div>
-      <div class="journey-label">Speak Confidently</div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== TESTIMONIALS ===== -->
-<section id="testimonials">
-  <div class="section-header" data-aos="fade-up">
-    <div class="section-tag">What Students Say</div>
-    <h2 class="section-title">Student <span>Stories</span></h2>
-    <p class="section-desc">Real experiences from students who transformed their Hindi with us.</p>
-    <div class="divider"></div>
-  </div>
-  <div class="swiper swiper-testimonials">
-    <div class="swiper-wrapper">
+  <!-- ===== COURSES ===== -->
+  <section id="courses">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">What We Offer</div>
+      <h2 class="section-title">Our <span>Courses</span></h2>
+      <p class="section-desc">Comprehensive Hindi learning programs designed for Tamil speakers — from beginners to
+        advanced.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="courses-grid">
+      <div class="course-card" data-tilt data-tilt-max="8" data-aos="fade-up" data-aos-delay="0">
+        <div class="course-card-glow"></div>
+        <div class="course-icon"><i class="fas fa-comments"></i></div>
+        <div class="course-title">Spoken Hindi Through Tamil</div>
+        <div class="course-desc">Master conversational Hindi using your mother tongue Tamil as the foundation. Perfect
+          for beginners and daily communication.</div>
+        <span class="course-badge">Most Popular</span>
+      </div>
+      <div class="course-card" data-tilt data-tilt-max="8" data-aos="fade-up" data-aos-delay="100">
+        <div class="course-card-glow"></div>
+        <div class="course-icon"><i class="fas fa-language"></i></div>
+        <div class="course-title">Spoken Tamil Through Hindi</div>
+        <div class="course-desc">For Hindi speakers who wish to learn Tamil fluently, bridging linguistic and cultural
+          connections naturally.</div>
+        <span class="course-badge">Bilingual</span>
+      </div>
+      <div class="course-card" data-tilt data-tilt-max="8" data-aos="fade-up" data-aos-delay="200">
+        <div class="course-card-glow"></div>
+        <div class="course-icon"><i class="fas fa-briefcase"></i></div>
+        <div class="course-title">Business Hindi</div>
+        <div class="course-desc">Professional Hindi for corporate environments, meetings, presentations, and official
+          business communication.</div>
+        <span class="course-badge">Professional</span>
+      </div>
+      <div class="course-card" data-tilt data-tilt-max="8" data-aos="fade-up" data-aos-delay="0">
+        <div class="course-card-glow"></div>
+        <div class="course-icon"><i class="fas fa-stamp"></i></div>
+        <div class="course-title">Official Hindi</div>
+        <div class="course-desc">Learn Hindi for government offices, official correspondence, and administrative
+          communication with precision.</div>
+        <span class="course-badge">Government</span>
+      </div>
+      <div class="course-card" data-tilt data-tilt-max="8" data-aos="fade-up" data-aos-delay="100">
+        <div class="course-card-glow"></div>
+        <div class="course-icon"><i class="fas fa-pen-nib"></i></div>
+        <div class="course-title">Written Hindi</div>
+        <div class="course-desc">Master the Devanagari script, grammar, and written expression from basic alphabets to
+          advanced composition.</div>
+        <span class="course-badge">Foundation</span>
+      </div>
+      <div class="course-card" data-aos="fade-up" data-aos-delay="200"
+        style="background: linear-gradient(135deg, rgba(30,58,138,0.2), rgba(37,99,235,0.1)); border-color: rgba(30,58,138,0.3); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:16px; min-height:200px;">
+        <div style="font-size:36px; color:rgba(251,191,36,0.4)"><i class="fas fa-phone"></i></div>
+        <div style="font-family:var(--font-display);font-size:20px;font-weight:700;color:var(--white);">Custom Programs
+        </div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.5)">Tailored learning paths for your specific goals. Contact
+          us for a personalized consultation.</div>
+        <a href="tel:+919659602204" class="btn-primary" style="font-size:12px;padding:10px 20px;">Enquire Now</a>
+      </div>
+    </div>
+  </section>
 
-      <div class="swiper-slide">
-        <div class="testimonial-card">
-          <div class="testimonial-quote">"</div>
-          <div class="testimonial-stars">★★★★★</div>
-          <div class="testimonial-text">Learning Hindi through Tamil was incredibly easy. The way sir explains concepts using Tamil makes everything click instantly. I went from zero to conversational in just 3 months!</div>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">P</div>
-            <div>
-              <div class="testimonial-name">Priya Subramanian</div>
-              <div class="testimonial-loc">Salem, Tamil Nadu</div>
-            </div>
+  <!-- ===== SYLLABUS ===== -->
+  <section id="syllabus" style="padding:100px 40px;">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">Curriculum</div>
+      <h2 class="section-title">Our <span>Syllabus</span></h2>
+      <p class="section-desc">A structured learning journey covering all essential Hindi examinations and practical
+        skills.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item" data-aos="fade-right" data-aos-delay="0">
+        <div class="timeline-dot"><i class="fas fa-microphone"></i></div>
+        <div class="timeline-content">
+          <div class="timeline-title">Spoken Hindi</div>
+          <div class="timeline-desc">Conversational Hindi with practical day-to-day vocabulary, pronunciation, and
+            sentence construction for real-life scenarios.</div>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
+        <div class="timeline-dot"><i class="fas fa-book-open"></i></div>
+        <div class="timeline-content">
+          <div class="timeline-title">NCERT Hindi Curriculum</div>
+          <div class="timeline-desc">Complete NCERT Hindi syllabus coverage for students needing academic excellence
+            aligned with national standards.</div>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
+        <div class="timeline-dot"><i class="fas fa-school"></i></div>
+        <div class="timeline-content">
+          <div class="timeline-title">CBSE Hindi</div>
+          <div class="timeline-desc">CBSE board examination preparation with focus on scoring patterns, grammar, writing
+            skills, and comprehension.</div>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
+        <div class="timeline-dot"><i class="fas fa-certificate"></i></div>
+        <div class="timeline-content">
+          <div class="timeline-title">Matriculation Hindi</div>
+          <div class="timeline-desc">State board matriculation Hindi preparation ensuring strong foundational knowledge
+            for academic progression.</div>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-right" data-aos-delay="400">
+        <div class="timeline-dot"><i class="fas fa-award"></i></div>
+        <div class="timeline-content">
+          <div class="timeline-title">Sabha Examinations</div>
+          <div class="timeline-desc">Specialized preparation for Hindi Sabha examinations including Praveen, Visharad,
+            and advanced proficiency certifications.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section id="features">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">How We Teach</div>
+      <h2 class="section-title">Premium <span>Features</span></h2>
+      <p class="section-desc">Modern teaching methods combined with personalized attention for the best learning
+        outcomes.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
+        <span class="feature-icon"><i class="fas fa-video"></i></span>
+        <div class="feature-title">Video & Audio Classes</div>
+        <div class="feature-desc">High-quality video and audio sessions that make learning Hindi visual, auditory, and
+          highly engaging.</div>
+      </div>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+        <span class="feature-icon"><i class="fas fa-users"></i></span>
+        <div class="feature-title">Group Conversation</div>
+        <div class="feature-desc">Interactive group sessions to build conversational confidence and practice real
+          dialogue in a supportive environment.</div>
+      </div>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+        <span class="feature-icon"><i class="fas fa-bullseye"></i></span>
+        <div class="feature-title">One-to-One Sessions</div>
+        <div class="feature-desc">Personalized one-on-one conversation practice with direct feedback to accelerate your
+          fluency rapidly.</div>
+      </div>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
+        <span class="feature-icon"><i class="fas fa-house-user"></i></span>
+        <div class="feature-title">Flexible Learning Modes</div>
+        <div class="feature-desc">Choose from online classes, offline classroom sessions, or convenient home tuition —
+          wherever you learn best.</div>
+      </div>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+        <span class="feature-icon"><i class="fas fa-book-open"></i></span>
+        <div class="feature-title">Practical Exercises</div>
+        <div class="feature-desc">Structured exercises that reinforce grammar, vocabulary, and pronunciation through
+          daily practice activities.</div>
+      </div>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+        <span class="feature-icon"><i class="fas fa-wand-magic-sparkles"></i></span>
+        <div class="feature-title">Personalized Guidance</div>
+        <div class="feature-desc">Customized learning plans tailored to each student's pace, goals, and background for
+          maximum progress.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <div class="about-wrap container">
+      <div class="about-img-wrap" data-aos="fade-right">
+        <div class="about-img-frame">
+          <div class="about-img-pattern"></div>
+          <div class="about-img-icon"><i class="fas fa-user-tie"></i></div>
+        </div>
+        <div class="about-img-badge">
+          <span class="num">10+</span>
+          <span class="lbl">Years Teaching</span>
+        </div>
+      </div>
+      <div class="about-content" data-aos="fade-left">
+        <div class="section-tag">Your Trainer</div>
+        <h2 class="about-name">K. Ashokkumar</h2>
+        <div class="about-role">Hindi Pandit & Pracharak (DBHPS)</div>
+        <p class="about-text">
+          With over a decade of dedicated teaching experience, K. Ashokkumar has transformed the way Tamil-speaking
+          students learn and master Hindi. As a certified Hindi Pandit and Pracharak from DBHPS, he brings academic
+          rigor combined with a deeply empathetic teaching philosophy that meets every student where they are.
+          <br><br>
+          His unique approach of teaching Hindi through Tamil removes the intimidation barrier and creates a natural
+          bridge between two rich languages, enabling students to achieve fluency far faster than conventional methods.
+        </p>
+        <div class="about-achievements">
+          <div class="achievement-item">
+            <div class="ach-icon"><i class="fas fa-certificate"></i></div>
+            <div class="ach-text">DBHPS Certified Hindi Pandit & Pracharak</div>
+          </div>
+          <div class="achievement-item">
+            <div class="ach-icon"><i class="fas fa-users"></i></div>
+            <div class="ach-text">1000+ Students Successfully Trained</div>
+          </div>
+          <div class="achievement-item">
+            <div class="ach-icon"><i class="fas fa-globe"></i></div>
+            <div class="ach-text">Online & Offline Teaching Expertise</div>
+          </div>
+          <div class="achievement-item">
+            <div class="ach-icon"><i class="fas fa-book"></i></div>
+            <div class="ach-text">NCERT, CBSE & Sabha Exam Specialist</div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="swiper-slide">
-        <div class="testimonial-card">
-          <div class="testimonial-quote">"</div>
-          <div class="testimonial-stars">★★★★★</div>
-          <div class="testimonial-text">Excellent teaching style and extremely practical sessions. The one-on-one conversation practice made me confident to speak Hindi at my workplace. Best investment I made.</div>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">K</div>
-            <div>
-              <div class="testimonial-name">Karthik Rajan</div>
-              <div class="testimonial-loc">Chennai, Tamil Nadu</div>
+  <!-- ===== JOURNEY ===== -->
+  <section id="journey" style="padding:100px 40px;">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">Your Path</div>
+      <h2 class="section-title">Success <span>Journey</span></h2>
+      <p class="section-desc">A proven 5-step roadmap from complete beginner to confident Hindi speaker.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="journey-steps">
+      <div class="journey-step" data-aos="zoom-in" data-aos-delay="0">
+        <div class="journey-num">1</div>
+        <div class="journey-label">Learn the Basics</div>
+      </div>
+      <div class="journey-step" data-aos="zoom-in" data-aos-delay="100">
+        <div class="journey-num">2</div>
+        <div class="journey-label">Build Vocabulary</div>
+      </div>
+      <div class="journey-step" data-aos="zoom-in" data-aos-delay="200">
+        <div class="journey-num">3</div>
+        <div class="journey-label">Practice Conversations</div>
+      </div>
+      <div class="journey-step" data-aos="zoom-in" data-aos-delay="300">
+        <div class="journey-num">4</div>
+        <div class="journey-label">Improve Fluency</div>
+      </div>
+      <div class="journey-step" data-aos="zoom-in" data-aos-delay="400">
+        <div class="journey-num">5</div>
+        <div class="journey-label">Speak Confidently</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section id="testimonials">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">What Students Say</div>
+      <h2 class="section-title">Student <span>Stories</span></h2>
+      <p class="section-desc">Real experiences from students who transformed their Hindi with us.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="swiper swiper-testimonials">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-text">Learning Hindi through Tamil was incredibly easy. The way sir explains
+              concepts using Tamil makes everything click instantly. I went from zero to conversational in just 3
+              months!</div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">P</div>
+              <div>
+                <div class="testimonial-name">Priya Subramanian</div>
+                <div class="testimonial-loc">Salem, Tamil Nadu</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="swiper-slide">
-        <div class="testimonial-card">
-          <div class="testimonial-quote">"</div>
-          <div class="testimonial-stars">★★★★★</div>
-          <div class="testimonial-text">Highly recommended for all beginners! Sir's patience and structured approach helped me clear my CBSE Hindi exam with distinction. Very grateful for his guidance.</div>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">M</div>
-            <div>
-              <div class="testimonial-name">Mahalakshmi Perumal</div>
-              <div class="testimonial-loc">Coimbatore, Tamil Nadu</div>
+        <div class="swiper-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-text">Excellent teaching style and extremely practical sessions. The one-on-one
+              conversation practice made me confident to speak Hindi at my workplace. Best investment I made.</div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">K</div>
+              <div>
+                <div class="testimonial-name">Karthik Rajan</div>
+                <div class="testimonial-loc">Chennai, Tamil Nadu</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="swiper-slide">
-        <div class="testimonial-card">
-          <div class="testimonial-quote">"</div>
-          <div class="testimonial-stars">★★★★★</div>
-          <div class="testimonial-text">My confidence in speaking Hindi has improved significantly. The group conversation sessions were the game-changer for me. I now speak without hesitation at my office.</div>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">A</div>
-            <div>
-              <div class="testimonial-name">Arun Prakash</div>
-              <div class="testimonial-loc">Erode, Tamil Nadu</div>
+        <div class="swiper-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-text">Highly recommended for all beginners! Sir's patience and structured approach
+              helped me clear my CBSE Hindi exam with distinction. Very grateful for his guidance.</div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">M</div>
+              <div>
+                <div class="testimonial-name">Mahalakshmi Perumal</div>
+                <div class="testimonial-loc">Coimbatore, Tamil Nadu</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="swiper-slide">
-        <div class="testimonial-card">
-          <div class="testimonial-quote">"</div>
-          <div class="testimonial-stars">★★★★★</div>
-          <div class="testimonial-text">The best Hindi academy in Tamil Nadu without any doubt. The teaching methodology is unique, practical, and extremely effective. My children are also enrolled now!</div>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">V</div>
-            <div>
-              <div class="testimonial-name">Vijay Kumar</div>
-              <div class="testimonial-loc">Tirupur, Tamil Nadu</div>
+        <div class="swiper-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-text">My confidence in speaking Hindi has improved significantly. The group
+              conversation sessions were the game-changer for me. I now speak without hesitation at my office.</div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">A</div>
+              <div>
+                <div class="testimonial-name">Arun Prakash</div>
+                <div class="testimonial-loc">Erode, Tamil Nadu</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="swiper-slide">
-        <div class="testimonial-card">
-          <div class="testimonial-quote">"</div>
-          <div class="testimonial-stars">★★★★★</div>
-          <div class="testimonial-text">I cleared my Sabha Vishaarad exam in first attempt thanks to sir's dedicated coaching. The study materials and exam strategies were invaluable. Truly outstanding teacher.</div>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">R</div>
-            <div>
-              <div class="testimonial-name">Revathi Krishnan</div>
-              <div class="testimonial-loc">Madurai, Tamil Nadu</div>
+        <div class="swiper-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-text">The best Hindi academy in Tamil Nadu without any doubt. The teaching
+              methodology is unique, practical, and extremely effective. My children are also enrolled now!</div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">V</div>
+              <div>
+                <div class="testimonial-name">Vijay Kumar</div>
+                <div class="testimonial-loc">Tirupur, Tamil Nadu</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="swiper-slide">
-        <div class="testimonial-card">
-          <div class="testimonial-quote">"</div>
-          <div class="testimonial-stars">★★★★★</div>
-          <div class="testimonial-text">Online classes are as effective as offline. The video quality, teaching pace, and interactive discussions are top notch. I joined from Bengaluru and it was worth every rupee.</div>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">S</div>
-            <div>
-              <div class="testimonial-name">Senthil Murugan</div>
-              <div class="testimonial-loc">Bengaluru, Karnataka</div>
+        <div class="swiper-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-text">I cleared my Sabha Vishaarad exam in first attempt thanks to sir's dedicated
+              coaching. The study materials and exam strategies were invaluable. Truly outstanding teacher.</div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">R</div>
+              <div>
+                <div class="testimonial-name">Revathi Krishnan</div>
+                <div class="testimonial-loc">Madurai, Tamil Nadu</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="swiper-slide">
-        <div class="testimonial-card">
-          <div class="testimonial-quote">"</div>
-          <div class="testimonial-stars">★★★★★</div>
-          <div class="testimonial-text">Business Hindi course helped me close deals with Hindi-speaking clients. The professional vocabulary and formal communication skills sir taught are directly applicable at work.</div>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">N</div>
-            <div>
-              <div class="testimonial-name">Nandhini Balasubramanian</div>
-              <div class="testimonial-loc">Salem, Tamil Nadu</div>
+        <div class="swiper-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-text">Online classes are as effective as offline. The video quality, teaching pace,
+              and interactive discussions are top notch. I joined from Bengaluru and it was worth every rupee.</div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">S</div>
+              <div>
+                <div class="testimonial-name">Senthil Murugan</div>
+                <div class="testimonial-loc">Bengaluru, Karnataka</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="swiper-slide">
-        <div class="testimonial-card">
-          <div class="testimonial-quote">"</div>
-          <div class="testimonial-stars">★★★★★</div>
-          <div class="testimonial-text">My son's Hindi marks improved from 48 to 91 in just one semester under sir's guidance. The NCERT-focused approach with Tamil explanations made all the difference.</div>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">T</div>
-            <div>
-              <div class="testimonial-name">Thenmozhi Selvam</div>
-              <div class="testimonial-loc">Namakkal, Tamil Nadu</div>
+        <div class="swiper-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-text">Business Hindi course helped me close deals with Hindi-speaking clients. The
+              professional vocabulary and formal communication skills sir taught are directly applicable at work.</div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">N</div>
+              <div>
+                <div class="testimonial-name">Nandhini Balasubramanian</div>
+                <div class="testimonial-loc">Salem, Tamil Nadu</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="swiper-slide">
-        <div class="testimonial-card">
-          <div class="testimonial-quote">"</div>
-          <div class="testimonial-stars">★★★★★</div>
-          <div class="testimonial-text">The flexible timing and home tuition option was perfect for my schedule. Sir is highly knowledgeable, patient, and motivating. I strongly recommend The Hindian Academy to everyone.</div>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">G</div>
-            <div>
-              <div class="testimonial-name">Gowrishankar Pillai</div>
-              <div class="testimonial-loc">Trichy, Tamil Nadu</div>
+        <div class="swiper-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-text">My son's Hindi marks improved from 48 to 91 in just one semester under sir's
+              guidance. The NCERT-focused approach with Tamil explanations made all the difference.</div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">T</div>
+              <div>
+                <div class="testimonial-name">Thenmozhi Selvam</div>
+                <div class="testimonial-loc">Namakkal, Tamil Nadu</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-    </div>
-    <div class="swiper-pagination"></div>
-  </div>
-</section>
+        <div class="swiper-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-text">The flexible timing and home tuition option was perfect for my schedule. Sir
+              is highly knowledgeable, patient, and motivating. I strongly recommend The Hindian Academy to everyone.
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">G</div>
+              <div>
+                <div class="testimonial-name">Gowrishankar Pillai</div>
+                <div class="testimonial-loc">Trichy, Tamil Nadu</div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<!-- ===== GALLERY ===== -->
-<section id="gallery" style="padding:100px 40px;">
-  <div class="section-header" data-aos="fade-up">
-    <div class="section-tag">Visual Stories</div>
-    <h2 class="section-title">Our <span>Gallery</span></h2>
-    <p class="section-desc">A glimpse into our learning environment and student journeys.</p>
-    <div class="divider"></div>
-  </div>
-  <div class="swiper swiper-gallery">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide gallery-slide">
-        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80" alt="Students learning" loading="lazy">
-        <div class="gallery-overlay"><div class="gallery-overlay-text">Classroom Sessions</div></div>
       </div>
-      <div class="swiper-slide gallery-slide">
-        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80" alt="Online class" loading="lazy">
-        <div class="gallery-overlay"><div class="gallery-overlay-text">Online Learning</div></div>
-      </div>
-      <div class="swiper-slide gallery-slide">
-        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80" alt="Education" loading="lazy">
-        <div class="gallery-overlay"><div class="gallery-overlay-text">Language Immersion</div></div>
-      </div>
-      <div class="swiper-slide gallery-slide">
-        <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=600&q=80" alt="Group study" loading="lazy">
-        <div class="gallery-overlay"><div class="gallery-overlay-text">Group Conversations</div></div>
-      </div>
-      <div class="swiper-slide gallery-slide">
-        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80" alt="Books" loading="lazy">
-        <div class="gallery-overlay"><div class="gallery-overlay-text">Study Materials</div></div>
-      </div>
-      <div class="swiper-slide gallery-slide">
-        <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=600&q=80" alt="Writing" loading="lazy">
-        <div class="gallery-overlay"><div class="gallery-overlay-text">Written Hindi Practice</div></div>
-      </div>
-      <div class="swiper-slide gallery-slide">
-        <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80" alt="Teaching" loading="lazy">
-        <div class="gallery-overlay"><div class="gallery-overlay-text">Interactive Teaching</div></div>
-      </div>
-      <div class="swiper-slide gallery-slide">
-        <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&q=80" alt="Library" loading="lazy">
-        <div class="gallery-overlay"><div class="gallery-overlay-text">Resource Library</div></div>
-      </div>
-      <div class="swiper-slide gallery-slide">
-        <img src="https://images.unsplash.com/photo-1599687351724-dfa3c4ff81b1?w=600&q=80" alt="Certification" loading="lazy">
-        <div class="gallery-overlay"><div class="gallery-overlay-text">Exam Preparation</div></div>
-      </div>
-      <div class="swiper-slide gallery-slide">
-        <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=600&q=80" alt="Notebook" loading="lazy">
-        <div class="gallery-overlay"><div class="gallery-overlay-text">Practice Sessions</div></div>
-      </div>
+      <div class="swiper-pagination"></div>
     </div>
-    <div class="swiper-pagination"></div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== WHY US ===== -->
-<section id="why">
-  <div class="section-header" data-aos="fade-up">
-    <div class="section-tag">Our Advantage</div>
-    <h2 class="section-title">Why <span>Choose Us</span></h2>
-    <p class="section-desc">Six compelling reasons why hundreds of students trust The Hindian Academy.</p>
-    <div class="divider"></div>
-  </div>
-  <div class="why-grid container">
-    <div class="why-card" data-aos="fade-up" data-aos-delay="0">
-      <div class="why-card-icon"><i class="fas fa-user-tie"></i></div>
-      <div class="why-title">Experienced Trainer</div>
-      <div class="why-desc">DBHPS certified Hindi Pandit with 10+ years of dedicated teaching experience and proven results.</div>
+  <!-- ===== GALLERY ===== -->
+  <section id="gallery" style="padding:100px 40px;">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">Visual Stories</div>
+      <h2 class="section-title">Our <span>Gallery</span></h2>
+      <p class="section-desc">A glimpse into our learning environment and student journeys.</p>
+      <div class="divider"></div>
     </div>
-    <div class="why-card" data-aos="fade-up" data-aos-delay="100">
-      <div class="why-card-icon"><i class="fas fa-tags"></i></div>
-      <div class="why-title">Affordable Fees</div>
-      <div class="why-desc">Premium quality education at accessible prices. We believe language learning should be available to all.</div>
-    </div>
-    <div class="why-card" data-aos="fade-up" data-aos-delay="200">
-      <div class="why-card-icon"><i class="fas fa-clock"></i></div>
-      <div class="why-title">Flexible Timings</div>
-      <div class="why-desc">Morning, evening, and weekend batches to accommodate students, working professionals, and families.</div>
-    </div>
-    <div class="why-card" data-aos="fade-up" data-aos-delay="0">
-      <div class="why-card-icon"><i class="fas fa-laptop-house"></i></div>
-      <div class="why-title">Online & Offline</div>
-      <div class="why-desc">Learn from the comfort of home via online classes or attend in-person sessions and home tuition.</div>
-    </div>
-    <div class="why-card" data-aos="fade-up" data-aos-delay="100">
-      <div class="why-card-icon"><i class="fas fa-hands-helping"></i></div>
-      <div class="why-title">Personalized Attention</div>
-      <div class="why-desc">Small batch sizes ensure every student receives individual attention and personalized learning plans.</div>
-    </div>
-    <div class="why-card" data-aos="fade-up" data-aos-delay="200">
-      <div class="why-card-icon"><i class="fas fa-graduation-cap"></i></div>
-      <div class="why-title">Exam Preparation</div>
-      <div class="why-desc">Specialized coaching for NCERT, CBSE, Matric, and Sabha examinations with proven success rates.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FAQ ===== -->
-<section id="faq" style="padding:100px 40px;">
-  <div class="section-header" data-aos="fade-up">
-    <div class="section-tag">Common Questions</div>
-    <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
-    <div class="divider"></div>
-  </div>
-  <div class="faq-wrap" data-aos="fade-up">
-    <div class="faq-item">
-      <div class="faq-q">How long does it take to learn Hindi? <span class="faq-arrow"><i class="fas fa-chevron-down"></i></span></div>
-      <div class="faq-a"><p>With regular practice, most students achieve conversational fluency within 3–6 months. Exam preparation courses typically span 4–8 months depending on the level. Our personalized learning plans are designed to match your pace and goals.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Are online classes as effective as offline? <span class="faq-arrow"><i class="fas fa-chevron-down"></i></span></div>
-      <div class="faq-a"><p>Absolutely. Our online classes use interactive video sessions, voice practice, and real-time feedback. Many students prefer online learning for its convenience. Both modes deliver the same quality curriculum and personalized attention.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Do you provide study materials? <span class="faq-arrow"><i class="fas fa-chevron-down"></i></span></div>
-      <div class="faq-a"><p>Yes. All enrolled students receive comprehensive study materials including notes, vocabulary lists, practice exercises, and audio recordings. Materials are tailored to each course and updated regularly.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Is one-to-one coaching available? <span class="faq-arrow"><i class="fas fa-chevron-down"></i></span></div>
-      <div class="faq-a"><p>Yes, we offer one-to-one conversation sessions as a core feature of our program. These personal sessions with the trainer focus on your specific weaknesses and accelerate progress significantly compared to group classes alone.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Do you prepare students for competitive examinations? <span class="faq-arrow"><i class="fas fa-chevron-down"></i></span></div>
-      <div class="faq-a"><p>Yes, we specialize in exam preparation for NCERT, CBSE, Matric board, and Sabha examinations (Praveen, Visharad). Our targeted preparation approach has helped students consistently achieve excellent results in all major Hindi examinations.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CONTACT ===== -->
-<section id="contact">
-  <div class="section-header" data-aos="fade-up">
-    <div class="section-tag">Get In Touch</div>
-    <h2 class="section-title">Contact <span>Us</span></h2>
-    <p class="section-desc">Ready to begin your Hindi journey? Reach out for a free demo class today.</p>
-    <div class="divider"></div>
-  </div>
-  <div class="contact-grid container" data-aos="fade-up">
-    <div class="contact-card">
-      <span class="contact-card-icon"><i class="fas fa-phone"></i></span>
-      <div class="contact-card-title">Call Us</div>
-      <div class="contact-card-val">+91 96596 02204<br>Available 9AM – 8PM</div>
-      <a href="tel:+919659602204" class="contact-btn call">Call Now</a>
-    </div>
-    <div class="contact-card">
-      <span class="contact-card-icon"><i class="fab fa-whatsapp"></i></span>
-      <div class="contact-card-title">WhatsApp</div>
-      <div class="contact-card-val">Quick replies on WhatsApp<br>for all enquiries</div>
-      <a href="https://wa.me/919659602204?text=Hello%2C%20I%20am%20interested%20in%20joining%20The%20Hindian%20Spoken%20Hindi%20Academy." target="_blank" class="contact-btn wa">WhatsApp Now</a>
-    </div>
-    <div class="contact-card">
-      <span class="contact-card-icon"><i class="fas fa-envelope"></i></span>
-      <div class="contact-card-title">Email</div>
-      <div class="contact-card-val">hindiantamil@gmail.com<br>Reply within 24 hours</div>
-      <a href="mailto:hindiantamil@gmail.com" class="contact-btn email">Send Email</a>
-    </div>
-  </div>
-
-  <!-- Map -->
-  <div class="map-section container" data-aos="fade-up" data-aos-delay="200">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125292.77714640867!2d78.04985524335939!3d11.665136799999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf1e5b67cf833%3A0x59b07c2e7db46c3b!2sSalem%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Salem Location Map">
-    </iframe>
-  </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
-<footer>
-  <div class="footer-grid">
-    <div>
-      <div class="footer-brand-lockup">
-        <span class="footer-logo-mark">H</span>
-        <span class="footer-brand-text">
-          <span class="footer-brand-name">THE HINDIAN</span>
-          <span class="footer-brand-sub">Spoken Hindi Academy</span>
-        </span>
+    <div class="swiper swiper-gallery">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide gallery-slide">
+          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80" alt="Students learning"
+            loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-text">Classroom Sessions</div>
+          </div>
+        </div>
+        <div class="swiper-slide gallery-slide">
+          <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80" alt="Online class"
+            loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-text">Online Learning</div>
+          </div>
+        </div>
+        <div class="swiper-slide gallery-slide">
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80" alt="Education"
+            loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-text">Language Immersion</div>
+          </div>
+        </div>
+        <div class="swiper-slide gallery-slide">
+          <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=600&q=80" alt="Group study"
+            loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-text">Group Conversations</div>
+          </div>
+        </div>
+        <div class="swiper-slide gallery-slide">
+          <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80" alt="Books" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-text">Study Materials</div>
+          </div>
+        </div>
+        <div class="swiper-slide gallery-slide">
+          <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=600&q=80" alt="Writing"
+            loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-text">Written Hindi Practice</div>
+          </div>
+        </div>
+        <div class="swiper-slide gallery-slide">
+          <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80" alt="Teaching"
+            loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-text">Interactive Teaching</div>
+          </div>
+        </div>
+        <div class="swiper-slide gallery-slide">
+          <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&q=80" alt="Library"
+            loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-text">Resource Library</div>
+          </div>
+        </div>
+        <div class="swiper-slide gallery-slide">
+          <img src="https://images.unsplash.com/photo-1599687351724-dfa3c4ff81b1?w=600&q=80" alt="Certification"
+            loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-text">Exam Preparation</div>
+          </div>
+        </div>
+        <div class="swiper-slide gallery-slide">
+          <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=600&q=80" alt="Notebook"
+            loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-text">Practice Sessions</div>
+          </div>
+        </div>
       </div>
-      <p class="footer-tagline">Bridging Tamil and Hindi through expert teaching. Empowering students to speak, write, and excel in Hindi with confidence.</p>
-      <div class="footer-socials">
-        <a href="https://wa.me/919659602204" class="footer-social" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        <a href="mailto:hindiantamil@gmail.com" class="footer-social"><i class="fas fa-envelope"></i></a>
-        <a href="tel:+919659602204" class="footer-social"><i class="fas fa-phone"></i></a>
-        <a href="#" class="footer-social"><i class="fab fa-youtube"></i></a>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <!-- ===== WHY US ===== -->
+  <section id="why">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">Our Advantage</div>
+      <h2 class="section-title">Why <span>Choose Us</span></h2>
+      <p class="section-desc">Six compelling reasons why hundreds of students trust The Hindian Academy.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="why-grid container">
+      <div class="why-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="why-card-icon"><i class="fas fa-user-tie"></i></div>
+        <div class="why-title">Experienced Trainer</div>
+        <div class="why-desc">DBHPS certified Hindi Pandit with 10+ years of dedicated teaching experience and proven
+          results.</div>
+      </div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="why-card-icon"><i class="fas fa-tags"></i></div>
+        <div class="why-title">Affordable Fees</div>
+        <div class="why-desc">Premium quality education at accessible prices. We believe language learning should be
+          available to all.</div>
+      </div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="why-card-icon"><i class="fas fa-clock"></i></div>
+        <div class="why-title">Flexible Timings</div>
+        <div class="why-desc">Morning, evening, and weekend batches to accommodate students, working professionals, and
+          families.</div>
+      </div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="why-card-icon"><i class="fas fa-laptop-house"></i></div>
+        <div class="why-title">Online & Offline</div>
+        <div class="why-desc">Learn from the comfort of home via online classes or attend in-person sessions and home
+          tuition.</div>
+      </div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="why-card-icon"><i class="fas fa-hands-helping"></i></div>
+        <div class="why-title">Personalized Attention</div>
+        <div class="why-desc">Small batch sizes ensure every student receives individual attention and personalized
+          learning plans.</div>
+      </div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="why-card-icon"><i class="fas fa-graduation-cap"></i></div>
+        <div class="why-title">Exam Preparation</div>
+        <div class="why-desc">Specialized coaching for NCERT, CBSE, Matric, and Sabha examinations with proven success
+          rates.</div>
       </div>
     </div>
-    <div class="footer-col">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#courses">Courses</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#about">About Trainer</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Courses</h4>
-      <ul>
-        <li><a href="#courses">Spoken Hindi Through Tamil</a></li>
-        <li><a href="#courses">Spoken Tamil Through Hindi</a></li>
-        <li><a href="#courses">Business Hindi</a></li>
-        <li><a href="#courses">Official Hindi</a></li>
-        <li><a href="#courses">Written Hindi</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="tel:+919659602204">+91 96596 02204</a></li>
-        <li><a href="mailto:hindiantamil@gmail.com">hindiantamil@gmail.com</a></li>
-        <li><a href="#">Salem, Tamil Nadu</a></li>
-        <li><a href="#">Online Classes Available</a></li>
-        <li><a href="#">Home Tuition Available</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 The Hindian Spoken Hindi Academy. All rights reserved.</p>
-    <p>Designed with ♥ for Hindi learners across Tamil Nadu</p>
-  </div>
-</footer>
+  </section>
 
-<!-- ===== FLOATING ACTION BUTTONS ===== -->
-<div class="fab-wrap">
-  <a href="https://wa.me/919659602204?text=Hello%2C%20I%20am%20interested%20in%20joining%20The%20Hindian%20Spoken%20Hindi%20Academy." class="fab fab-wa" target="_blank" title="WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-  <a href="tel:+919659602204" class="fab fab-call" title="Call Now">
-    <i class="fas fa-phone"></i>
-  </a>
-</div>
-<script src="script.js"></script>
+  <!-- ===== FAQ ===== -->
+  <section id="faq" style="padding:100px 40px;">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">Common Questions</div>
+      <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="faq-wrap" data-aos="fade-up">
+      <div class="faq-item">
+        <div class="faq-q">How long does it take to learn Hindi? <span class="faq-arrow"><i
+              class="fas fa-chevron-down"></i></span></div>
+        <div class="faq-a">
+          <p>With regular practice, most students achieve conversational fluency within 3–6 months. Exam preparation
+            courses typically span 4–8 months depending on the level. Our personalized learning plans are designed to
+            match your pace and goals.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Are online classes as effective as offline? <span class="faq-arrow"><i
+              class="fas fa-chevron-down"></i></span></div>
+        <div class="faq-a">
+          <p>Absolutely. Our online classes use interactive video sessions, voice practice, and real-time feedback. Many
+            students prefer online learning for its convenience. Both modes deliver the same quality curriculum and
+            personalized attention.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you provide study materials? <span class="faq-arrow"><i
+              class="fas fa-chevron-down"></i></span></div>
+        <div class="faq-a">
+          <p>Yes. All enrolled students receive comprehensive study materials including notes, vocabulary lists,
+            practice exercises, and audio recordings. Materials are tailored to each course and updated regularly.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is one-to-one coaching available? <span class="faq-arrow"><i
+              class="fas fa-chevron-down"></i></span></div>
+        <div class="faq-a">
+          <p>Yes, we offer one-to-one conversation sessions as a core feature of our program. These personal sessions
+            with the trainer focus on your specific weaknesses and accelerate progress significantly compared to group
+            classes alone.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you prepare students for competitive examinations? <span class="faq-arrow"><i
+              class="fas fa-chevron-down"></i></span></div>
+        <div class="faq-a">
+          <p>Yes, we specialize in exam preparation for NCERT, CBSE, Matric board, and Sabha examinations (Praveen,
+            Visharad). Our targeted preparation approach has helped students consistently achieve excellent results in
+            all major Hindi examinations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">Get In Touch</div>
+      <h2 class="section-title">Contact <span>Us</span></h2>
+      <p class="section-desc">Ready to begin your Hindi journey? Reach out for a free demo class today.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="contact-grid container" data-aos="fade-up">
+      <div class="contact-card">
+        <span class="contact-card-icon"><i class="fas fa-phone"></i></span>
+        <div class="contact-card-title">Call Us</div>
+        <div class="contact-card-val">+91 96596 02204<br>Available 9AM – 8PM</div>
+        <a href="tel:+919659602204" class="contact-btn call">Call Now</a>
+      </div>
+      <div class="contact-card">
+        <span class="contact-card-icon"><i class="fab fa-whatsapp"></i></span>
+        <div class="contact-card-title">WhatsApp</div>
+        <div class="contact-card-val">Quick replies on WhatsApp<br>for all enquiries</div>
+        <a href="https://wa.me/919659602204?text=Hello%2C%20I%20am%20interested%20in%20joining%20The%20Hindian%20Spoken%20Hindi%20Academy."
+          target="_blank" class="contact-btn wa">WhatsApp Now</a>
+      </div>
+      <div class="contact-card">
+        <span class="contact-card-icon"><i class="fas fa-envelope"></i></span>
+        <div class="contact-card-title">Email</div>
+        <div class="contact-card-val">hindiantamil@gmail.com<br>Reply within 24 hours</div>
+        <a href="mailto:hindiantamil@gmail.com" class="contact-btn email">Send Email</a>
+      </div>
+    </div>
+
+    <!-- Map -->
+    <div class="map-section container" data-aos="fade-up" data-aos-delay="200">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125292.77714640867!2d78.04985524335939!3d11.665136799999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf1e5b67cf833%3A0x59b07c2e7db46c3b!2sSalem%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Salem Location Map">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-lockup">
+          <span class="footer-logo-mark">H</span>
+          <span class="footer-brand-text">
+            <span class="footer-brand-name">THE HINDIAN</span>
+            <span class="footer-brand-sub">Spoken Hindi Academy</span>
+          </span>
+        </div>
+        <p class="footer-tagline">Bridging Tamil and Hindi through expert teaching. Empowering students to speak, write,
+          and excel in Hindi with confidence.</p>
+        <div class="footer-socials">
+          <a href="https://wa.me/919659602204" class="footer-social" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="mailto:hindiantamil@gmail.com" class="footer-social"><i class="fas fa-envelope"></i></a>
+          <a href="tel:+919659602204" class="footer-social"><i class="fas fa-phone"></i></a>
+          <a href="#" class="footer-social"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#about">About Trainer</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Courses</h4>
+        <ul>
+          <li><a href="#courses">Spoken Hindi Through Tamil</a></li>
+          <li><a href="#courses">Spoken Tamil Through Hindi</a></li>
+          <li><a href="#courses">Business Hindi</a></li>
+          <li><a href="#courses">Official Hindi</a></li>
+          <li><a href="#courses">Written Hindi</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+919659602204">+91 96596 02204</a></li>
+          <li><a href="mailto:hindiantamil@gmail.com">hindiantamil@gmail.com</a></li>
+          <li><a href="#">Salem, Tamil Nadu</a></li>
+          <li><a href="#">Online Classes Available</a></li>
+          <li><a href="#">Home Tuition Available</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 The Hindian Spoken Hindi Academy. All rights reserved.</p>
+      <div class="visitor-counter" title="Total page visits">
+        <i class="fas fa-eye"></i> <span id="visit-count">----</span> views
+      </div>
+      <p>Designed with ♥ for Hindi learners across Tamil Nadu</p>
+    </div>
+  </footer>
+
+  <!-- ===== FLOATING ACTION BUTTONS ===== -->
+  <div class="fab-wrap">
+    <a href="https://wa.me/919659602204?text=Hello%2C%20I%20am%20interested%20in%20joining%20The%20Hindian%20Spoken%20Hindi%20Academy."
+      class="fab fab-wa" target="_blank" title="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:+919659602204" class="fab fab-call" title="Call Now">
+      <i class="fas fa-phone"></i>
+    </a>
+  </div>
+  <script src="script.js"></script>
 </body>
+
 </html>

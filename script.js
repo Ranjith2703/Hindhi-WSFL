@@ -220,3 +220,34 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     }
   });
 });
+
+// ===== VISITOR COUNTER API =====
+(function() {
+  const countEl = document.getElementById('visit-count');
+  if (!countEl) return;
+
+  // Unique namespace and key for CounterAPI
+  const namespace = 'thehindianspokenhindiacademy';
+  const key = 'pageviews';
+
+  // Increments and retrieves the count
+  fetch(`https://api.counterapi.dev/v1/${namespace}/${key}/up`)
+    .then(res => {
+      if (!res.ok) throw new Error('CounterAPI response error');
+      return res.json();
+    })
+    .then(data => {
+      if (data && typeof data.count === 'number') {
+        // Format the count with local number separators (e.g., 1,234)
+        countEl.textContent = data.count.toLocaleString();
+      }
+    })
+    .catch(err => {
+      console.warn('Visitor counter failed to load:', err);
+      // Silently hide the counter badge if the API is blocked or offline
+      const badge = countEl.closest('.visitor-counter');
+      if (badge) {
+        badge.style.display = 'none';
+      }
+    });
+})();
