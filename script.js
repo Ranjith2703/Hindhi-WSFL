@@ -147,6 +147,42 @@ window.addEventListener('load', () => {
     .to('#hero-stats', { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }, 1);
 });
 
+// ===== JOURNEY ANIMATION =====
+window.addEventListener('load', () => {
+  const journey = document.querySelector('#journey');
+  const progress = document.querySelector('.journey-progress');
+  const steps = gsap.utils.toArray('.journey-step');
+  if (!journey || !progress || steps.length === 0) return;
+
+  gsap.set(steps, { y: 24, opacity: 0 });
+
+  const journeyTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: journey,
+      start: 'top 68%',
+      once: true
+    }
+  });
+
+  journeyTl
+    .to(steps, {
+      y: 0,
+      opacity: 1,
+      duration: 0.65,
+      stagger: 0.14,
+      ease: 'power3.out'
+    })
+    .to(progress, {
+      width: '84%',
+      duration: 1.35,
+      ease: 'power2.inOut'
+    }, 0.12);
+
+  steps.forEach((step, index) => {
+    journeyTl.call(() => step.classList.add('is-active'), null, 0.24 + (index * 0.18));
+  });
+});
+
 // ===== MOBILE MENU =====
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
