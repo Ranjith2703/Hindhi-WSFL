@@ -2,7 +2,7 @@
 
 > A modern and interactive educational website designed for a Hindi learning academy, featuring premium UI design, smooth animations, course showcases, testimonials, and responsive user experience.
 
-🔗 **Live Demo:** https://hindianacademy.vercel.app/
+🔗 **Live Demo:** [HINDIANACADEMY](https://hindianacademy.vercel.app/)
 
 ---
 
