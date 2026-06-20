@@ -123,19 +123,6 @@ Optimized for:
 
 ---
 
-## 🖼️ Screenshots
-
-> Add screenshots of your website here
-
-```md
-![Homepage](./screenshots/homepage.png)
-
-![Courses](./screenshots/courses.png)
-
-![Gallery](./screenshots/gallery.png)
-```
-
----
 
 ## ☁️ Deployment
 
