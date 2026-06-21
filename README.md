@@ -129,9 +129,6 @@ Optimized for:
 Deploy easily using:
 
 * Vercel
-* Netlify
-* GitHub Pages
-* Firebase Hosting
 
 Example:
 
